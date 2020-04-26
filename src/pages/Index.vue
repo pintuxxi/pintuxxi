@@ -19,6 +19,7 @@
 </template>
 
 <script>
+
 export default {
   metaInfo: {
     title: 'PintuXXI' + process.env.TITLE
