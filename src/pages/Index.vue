@@ -21,7 +21,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'PintuXXI 【ORIGINAL】  | Watch Online Free | Movies Streaming'
+    title: 'PintuXXI' + process.env.TITLE
   }
 }
 </script>
