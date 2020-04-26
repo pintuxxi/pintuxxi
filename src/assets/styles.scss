@@ -1,0 +1,34 @@
+$p-font: san-serif;
+$p-color: white;
+$p-pink: #b01e4c;
+$p-purple: #201133;
+$p-purple-dark: #120a1d;
+$jumbo-bg-color: hsla(266, 50%, 13%, 0.5);
+
+// default setup size variable //
+
+$p-size-sm: 576px;
+$p-size-md: 768px;
+$p-size-lg: 992px;
+$p-size-xl: 1200px;
+
+// other variable //
+
+$p-global-transition: 0.4s;
+
+// ovveride default bootstrap value //
+
+$body-bg: $p-purple-dark;
+$body-color: $p-color;
+
+$theme-colors: (
+  "primary": $p-pink,
+  "secondary": $p-purple,
+  "secondary-dark": $p-purple-dark
+) !default;
+
+
+// Bootstrap and its default variables
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+// BootstrapVue and its default variables
+@import '../../node_modules/bootstrap-vue/src/index.scss';

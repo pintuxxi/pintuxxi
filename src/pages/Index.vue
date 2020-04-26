@@ -1,7 +1,25 @@
 <template>
   <Layout>
+    <PJumbotron />
+  </Layout>
+</template>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
+<script>
+import PJumbotron from "~/components/P-Jumbotron";
+
+export default {
+  components: {
+    PJumbotron
+  },
+  metaInfo: {
+    title: 'PintuXXI' + process.env.GRIDSOME_TITLE
+  }
+}
+</script>
+
+
+
+<!--   <Layout>
     <g-image alt="Example image" src="~/favicon.png" width="135" />
 
     <h1>Hello, world!</h1>
@@ -15,20 +33,4 @@
       <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
     </p>
 
-  </Layout>
-</template>
-
-<script>
-
-export default {
-  metaInfo: {
-    title: 'PintuXXI' + process.env.TITLE
-  }
-}
-</script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>
+  </Layout> -->
