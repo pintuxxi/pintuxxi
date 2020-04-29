@@ -1,15 +1,24 @@
 <template>
   <Layout>
     <PJumbotron />
+    <PMoviesMain />
+    <PMoviesUpcoming />
+    <PFooter />
   </Layout>
 </template>
 
 <script>
 import PJumbotron from "~/components/P-Jumbotron";
+import PMoviesMain from "~/components/movie-list/P-MoviesMain";
+import PMoviesUpcoming from "~/components/movie-list/P-MoviesUpcoming";
+import PFooter from "~/components/P-Footer";
 
 export default {
   components: {
-    PJumbotron
+    PJumbotron,
+    PMoviesMain,
+    PMoviesUpcoming,
+    PFooter
   },
   metaInfo: {
     title: 'PintuXXI' + process.env.GRIDSOME_TITLE

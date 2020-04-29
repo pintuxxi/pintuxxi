@@ -16,10 +16,11 @@ $p-size-xl: 1200px;
 
 $p-global-transition: 0.4s;
 
+// ================================ //
 // ovveride default bootstrap value //
+// ================================ //
 
 $body-bg: $p-purple-dark;
-$body-color: $p-color;
 
 $theme-colors: (
   "primary": $p-pink,
@@ -32,3 +33,18 @@ $theme-colors: (
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 // BootstrapVue and its default variables
 @import '../../node_modules/bootstrap-vue/src/index.scss';
+
+.card {
+	max-width: 220px;
+	margin-bottom: 15px;
+}
+
+.movie-content {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+.content-purple{
+	background-color: $p-purple;
+	width: 100%;
+}

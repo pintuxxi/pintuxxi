@@ -4,7 +4,7 @@
 <script>
 export default {
 
-  name: 'P-MovieList',
+  name: 'MoviePlay',
 
   data () {
     return {

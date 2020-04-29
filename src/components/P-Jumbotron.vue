@@ -1,24 +1,19 @@
 <template>
-	<div id="p-jumbotron">
-		<b-jumbotron
-			header="BootstrapVue"
-			lead="Bootstrap v4 Components for Vue.js 2"
-			bg-variant="secondary"
-		>
-			<p>For more information visit website</p>
-			<b-button variant="primary" href="#">More Info</b-button>
-		</b-jumbotron>
-	</div>
+	<b-jumbotron bg-variant="secondary">
+		<PMoviesJumbotron />
+	</b-jumbotron>
 </template>
 
 <script>
+import PMoviesJumbotron from "~/components/movie-list/P-MoviesJumbotron";
+
 export default {
 	name: "P-Jumbotron",
-
+	components: {
+		PMoviesJumbotron
+	},
 	data() {
 		return {};
 	},
 };
 </script>
-
-<style lang="css" scoped></style>
