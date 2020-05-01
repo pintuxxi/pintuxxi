@@ -44,7 +44,25 @@ $theme-colors: (
 	padding-bottom: 30px;
 }
 
-.content-purple{
+.content-purple {
 	background-color: $p-purple;
 	width: 100%;
+}
+
+.content-services {
+	position: relative;
+	max-width: 320px;
+	border: 1px solid $p-purple;
+	padding: 10px;
+}
+.content-services > small::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background: $p-pink;
+    top: -5px;
+    right: -5px;
+
 }
