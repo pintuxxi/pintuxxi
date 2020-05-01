@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <PJumbotron />
+    <!-- <PJumbotron /> -->
     <PMoviesMain />
     <PMoviesUpcoming />
     <PFooter />

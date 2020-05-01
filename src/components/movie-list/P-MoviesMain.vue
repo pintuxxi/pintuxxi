@@ -1,20 +1,17 @@
 <template>
-	<div class="container movie-content">
-		<PPagination />
-		<PMovieList :cards="cards" />
-		<PPagination />
-	</div>
+	<PMovieList
+		title="Main Featured"
+		:cards="cards"
+	/>
 </template>
 
 <script>
-import PPagination from "~/components/P-Pagination";	
 import PMovieList from "~/components/movie-list/P-MovieList";
 
 export default {
   name: 'P-MoviesMain',
   components: {
-  	PMovieList,
-  	PPagination
+  	PMovieList
   },
   data () {
     return {

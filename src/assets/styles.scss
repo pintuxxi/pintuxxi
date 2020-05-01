@@ -34,8 +34,22 @@ $theme-colors: (
 // BootstrapVue and its default variables
 @import '../../node_modules/bootstrap-vue/src/index.scss';
 
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+body {
+	font-family: 'Nunito', Arial, san-serif;
+	font-size: 14px;
+	color: white;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 .card {
-	max-width: 220px;
+	max-width: 180px;
 	margin-bottom: 15px;
 }
 
@@ -55,6 +69,7 @@ $theme-colors: (
 	border: 1px solid $p-purple;
 	padding: 10px;
 }
+
 .content-services > small::before {
     content: "";
     width: 10px;
@@ -63,6 +78,6 @@ $theme-colors: (
     border-radius: 50%;
     background: $p-pink;
     top: -5px;
-    right: -5px;
+    left: -5px;
 
 }

@@ -1,9 +1,9 @@
 <template>
-	<div class="content-purple">
-		<div class="container movie-content">
-			<PMovieList :cards="cards" />
-		</div>
-	</div>
+    <PMovieList
+      title="Upcoming Movies"
+      :cards="cards"
+      bg-purple
+    />
 </template>
 
 <script>
