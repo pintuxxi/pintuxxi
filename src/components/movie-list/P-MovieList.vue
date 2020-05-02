@@ -8,7 +8,7 @@
         <g-link class="pull-right">Show All</g-link>
       </div>
   	<div class="row">
-  		<div class="col-sm-3 col-md-4 col-xl-3" v-for="card in cards" :key="card.id">
+  		<div class="col-sm-2" v-for="card in cards" :key="card.id">
   			<PCard :title="card.title"/>	
   		</div>
   	</div>

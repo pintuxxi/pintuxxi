@@ -1,6 +1,6 @@
 <template>
 	<div id="p-navbar">
-		<b-navbar toggleable="lg" type="dark" variant="primary">
+		<b-navbar toggleable="lg" type="dark" variant="secondary">
 			<b-navbar-brand href="#">PINTUXXI</b-navbar-brand>
 
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

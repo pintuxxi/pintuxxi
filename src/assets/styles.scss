@@ -49,8 +49,46 @@ a {
 }
 
 .card {
+	position: relative;
 	max-width: 180px;
 	margin-bottom: 15px;
+	border: none;
+	overflow: hidden;
+	border-bottom: 1px solid white;
+
+	.card-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+	}
+
+	&::before {
+	    content: "";
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    top: 50px;
+	    /*z-index: 1;*/
+	    background-image: linear-gradient(
+	      to top,
+	      $p-purple-dark 50%,
+	      transparent
+	    );
+	}
+	
+	.card-img-overlay {
+		position: absolute;
+		bottom: 0;
+		top: 100px;
+	}
+}
+
+.content-purple .card::before {
+	    background-image: linear-gradient(
+	      to top,
+	      $p-purple 40%,
+	      transparent
+	    );
 }
 
 .movie-content {

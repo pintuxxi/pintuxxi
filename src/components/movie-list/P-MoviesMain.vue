@@ -15,13 +15,12 @@ export default {
   },
   data () {
     return {
-      cards: [
-      {id: 1, title: "Title 1 Satu"},
-      {id: 2, title: "Title 2 Dua"},
-      {id: 3, title: "Title 3 Tiga"},
-      {id: 4, title: "Title 4 Empat"}
-      ]
+      cards: null
     }
+  },
+  mounted() {
+  	
   }
+
 }
 </script>
