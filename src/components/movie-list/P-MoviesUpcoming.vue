@@ -1,10 +1,34 @@
 <template>
     <PMovieList
       title="Upcoming Movies"
-      :cards="cards"
+      :cards="$static.movies.edges"
+      :show-card="12"
       bg-purple
     />
 </template>
+
+<static-query>
+query {
+  movies: allMovies {
+    edges {
+      node {
+        id
+        imdb
+        title
+        slug
+        year
+        rating
+        runtime
+        genre
+        yt_trailer
+        poster
+        bg_image
+        quality
+      }
+    }
+  }
+}
+</static-query>
 
 <script>
 import PMovieList from "~/components/movie-list/P-MovieList";
@@ -15,14 +39,7 @@ export default {
   	PMovieList
   },
   data () {
-    return {
-      cards: [
-      {id: 1, title: "Title 1 Satu"},
-      {id: 2, title: "Title 2 Dua"},
-      {id: 3, title: "Title 3 Tiga"},
-      {id: 4, title: "Title 4 Empat"}
-      ]
-    }
+    return {}
   }
 }
 </script>
