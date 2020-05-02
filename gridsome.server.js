@@ -7,6 +7,10 @@
 const axios = require('axios')
 
 
+async function getMovies() {
+
+}
+
 
 module.exports = function (api) {
   // api.loadSource(({ addCollection }) => {
@@ -17,8 +21,8 @@ module.exports = function (api) {
   //   // Use the Pages API here: https://gridsome.org/docs/pages-api/
   // })
 
-	api.loadSource(async (actions) => {
-	    const moviesCollection = addCollection("Movies")
+	api.loadSource(async actions => {
+	    const moviesCollection = actions.addCollection("Movies")
 
 
 	})  
