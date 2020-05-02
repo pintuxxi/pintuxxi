@@ -8,7 +8,8 @@ const axios = require('axios')
 
 
 async function getMovies() {
-
+	const { data } = await axios.get("https://yts.mx/api/v2/list_movies.json") 
+	return data.data.movies
 }
 
 
@@ -23,7 +24,27 @@ module.exports = function (api) {
 
 	api.loadSource(async actions => {
 	    const moviesCollection = actions.addCollection("Movies")
+	    const movies = await getMovies()
 
+	    for (const movie of movies) {
+	    	moviesCollection.addNode({
+	    		id: movie.id,
+	    		imdb: movie.imdb_code,
+	    		title: movie.title,
+	    		title_english: movie.title_english,
+	    		title_long: movie.title_long,
+	    		slug: movie.slug,
+	    		year: movie.year,
+	    		rating: movie.rating,
+	    		runtime: movie.runtime,
+	    		genre: movie.genres,
+	    		summary: movie.summary,
+	    		desc_full: movie.description_full,
+	    		yt_trailer: movie.yt_trailer_code,
+	    		poster: movie.large_cover_image,
+	    		bg_image: movie.background_image
+	    	})
+	    }
 
 	})  
 }
