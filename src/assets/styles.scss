@@ -52,6 +52,7 @@ a {
 	}
 }
 
+
 .card {
 	$self: &;
 	position: relative;
@@ -60,10 +61,14 @@ a {
 	border: none;
 	overflow: hidden;
 	background-color: $p-purple-dark;
-	/*border-radius: none;*/
-	/*border: 1px solid $p-purple-dark;*/
+	border: 2px solid $p-purple-dark;
+
 	.card-img {
 		transition: .5s;
+	}
+
+	.card-link {
+		position: absolute;
 	}
 
 	.card-img-overlay {
@@ -74,8 +79,8 @@ a {
 
 		.btn-play {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			top: 50%;/*
+			left: 50%;*/
 			/*display: flex;
 			flex-wrap: wrap;
 			align-content: center;*/
@@ -139,7 +144,7 @@ a {
 		}
 
 		.card-img-overlay {
-			top: 170px;
+			top: 173px;
 			.btn-group {
 				opacity: 1;
 			}
@@ -151,6 +156,7 @@ a {
 .content-purple {
 	.card {
 		background-color: $p-purple;
+		border-color: $p-purple;
 	
 		&::before {
 	    background-image: linear-gradient(
