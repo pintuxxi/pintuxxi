@@ -59,9 +59,11 @@ a {
 	margin-bottom: 15px;
 	border: none;
 	overflow: hidden;
-	/*border-bottom: .5px solid white;*/
+	background-color: $p-purple-dark;
+	/*border-radius: none;*/
+	/*border: 1px solid $p-purple-dark;*/
 	.card-img {
-		/*filter: blur(2px);*/
+		transition: .5s;
 	}
 
 	.card-img-overlay {
@@ -69,6 +71,16 @@ a {
 		width: 100%;
 		top: 200px;
 		z-index: 2;
+
+		.btn-play {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			/*display: flex;
+			flex-wrap: wrap;
+			align-content: center;*/
+		}
+
 		.card-title {
 			opacity: 1;
 			padding: 0 20px;
@@ -117,8 +129,9 @@ a {
 
 	&:hover {
 		.card-img {
-			transform: scale(1.2);
+			transform: scale(1.5);
 			filter: blur(1px);
+
 		}
 
 		&::before {
@@ -136,12 +149,17 @@ a {
 }
 
 .content-purple {
-	.card::before {
+	.card {
+		background-color: $p-purple;
+	
+		&::before {
 	    background-image: linear-gradient(
 	      to top,
 	      $p-purple 40%,
 	      transparent
 	    );
+	}
+
 	}
 
 }
