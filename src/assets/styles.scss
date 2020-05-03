@@ -25,7 +25,10 @@ $body-bg: $p-purple-dark;
 $theme-colors: (
   "primary": $p-pink,
   "secondary": $p-purple,
-  "secondary-dark": $p-purple-dark
+  "secondary-dark": $p-purple-dark,
+  "play": #ec1257,
+  "youtube": #ce183d,
+  "bookmark": #6807a5
 ) !default;
 
 
@@ -61,7 +64,7 @@ a {
 	border: none;
 	overflow: hidden;
 	background-color: $p-purple-dark;
-	border: 2px solid $p-purple-dark;
+	/*border: 2px solid $p-purple-dark;*/
 	box-shadow: 0px 0px 0px hsla(0, 0 , 0, .2);
 
 	.card-img {
@@ -87,11 +90,9 @@ a {
 			left: 50%;
 		    margin-top: -20px;
 		    margin-left: -20px;
+		    filter: blur(1px);
 		}
 
-		&:hover svg {
-			color: $p-pink;
-		}
 	}
 
 	.card-img-overlay {
@@ -147,7 +148,8 @@ a {
 	}
 
 	&:hover {
-		box-shadow: 0px 2px 8px hsla(0, 0 , 0, .2);
+		box-shadow: 0px 0px 10px hsla(0, 0 , 0, .3);
+
 		.card-img {
 			transform: scale(1.5);
 			filter: blur(1px);
@@ -157,6 +159,11 @@ a {
 		.card-link {
 			opacity: 1;
 			transform: scale(1);
+			
+			svg {
+				color: $p-pink;
+				filter: blur(0px);
+			}
 		}
 
 		&::before {
@@ -164,7 +171,8 @@ a {
 		}
 
 		.card-img-overlay {
-			top: 173px;
+			top: 176px;
+
 			.btn-group {
 				opacity: 1;
 			}
@@ -176,7 +184,7 @@ a {
 .content-purple {
 	.card {
 		background-color: $p-purple;
-		border: 2px solid $p-purple;
+		/*border: 2px solid $p-purple;*/
 
 		&::before {
 	    background-image: linear-gradient(

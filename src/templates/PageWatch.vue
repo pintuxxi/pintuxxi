@@ -4,7 +4,7 @@
 <script>
 export default {
 
-  name: 'MoviePlay',
+  name: 'PageWatch',
 
   data () {
     return {

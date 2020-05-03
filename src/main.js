@@ -9,15 +9,15 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
-// import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faBookmark } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import '~/assets/styles.scss'
 
 config.autoAddCss = false;
-library.add(faPlayCircle, faPlay)
+library.add(faPlayCircle, faPlay, faBookmark, faYoutube)
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
