@@ -2,9 +2,9 @@
 	<div class="card mx-auto">
 		<img :src="poster" class="card-img" :alt="title" />
 		<div class="hd-tag" v-if="getQuality">HD</div>
-		<a class="card-link" href="#" :title="title">
+		<g-link :to="route" class="card-link" :title="title">
 			<font-awesome :icon="['fas', 'play']" class="text-play" />
-		</a>
+		</g-link >
 		<div class="card-img-overlay">
 			<p class="card-title text-center">{{ title }}</p>
 			<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
@@ -34,6 +34,7 @@ export default {
 		sub: String,
 		quality: Array,
 		episode: Number,
+		route: String
 	},
 	data() {
 		return {
@@ -44,6 +45,6 @@ export default {
 		getQuality: function() {
 			return this.quality.includes(this.qualityFilter);
 		},
-	},
+	}
 };
 </script>

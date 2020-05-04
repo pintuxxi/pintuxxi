@@ -29,6 +29,7 @@ module.exports = function (api) {
 
 	    for (const movie of movies) {
 	    	let quality = []
+	    	let route = `/movie/${movie.imdb_code}` //.toLowerCase().replace(/ /g, "-")
 	    	for (const tor of movie.torrents) {
 	    		quality.push(tor.quality)
 	    	}
@@ -49,9 +50,72 @@ module.exports = function (api) {
 	    		yt_trailer: movie.yt_trailer_code,
 	    		poster: movie.large_cover_image,
 	    		bg_image: movie.background_image,
-	    		quality: quality
+	    		quality: quality,
+	    		route: route
 	    	})
 	    }
 
-	})  
+	})
+
+  api.createPages( async ({ graphql, createPage }) => {
+
+  	const { data } = await graphql(`
+		query {
+		  allMovies {
+		    edges {
+		      node {
+		      	id
+		      	imdb
+		        title
+		      }
+		    }
+		  }
+		}
+	`)
+
+
+
+  	data.allMovies.edges.forEach(({ node }) => {
+	    createPage({
+	    	path: `/movie/${node.imdb}`,
+	    	component: "./src/templates/PageWatch.vue",
+	    	context: {
+	    		id: node.id,
+	    		imdb: node.imdb,
+	    		title: node.title
+	    	}
+	    })
+  	})
+
+    // createPage({
+    // 	path: `/movie`,
+    // 	component: "./src/templates/PageWatch.vue",
+    // })
+
+  	// for (const movie of data.allMovies.edges) {
+	  //   actions.createPage({
+	  //   	path: `/movie/${movie.node.route}`,
+	  //   	component: "./src/templates/PageWatch.vue",
+	  //   	context: {
+	  //   		imdb: movie.node.imdb
+	  //   	}
+	  //   })
+  	// }
+
+
+
+  // 	const movies = await getMovies()
+  // 	movies.forEach( mov => {
+		// createPage({
+		// 	path: `/movie/${mov.imdb_code}`,
+		// 	component: "./src/templates/PageWatch.vue",
+	 //    	context: {
+	 //    		id: mov.id,
+	 //    		imdb: mov.title
+	 //    	}
+		// })
+  // 	})
+
+  })
+
 }

@@ -1,7 +1,7 @@
 <template>
   <div :class="{'content-purple': bgPurple}">
     <div class="container movie-content">
-      <div class="row clearfix">
+      <div class="row">
         <h3 v-if="titleGroup">
           {{ titleGroup }}
         </h3>
@@ -13,7 +13,8 @@
         :title="card.node.title"
         :poster="card.node.poster"
         :quality="card.node.quality"
-        />	
+        :route="card.node.route"
+        />
   		</div>
   	</div>
     </div>
