@@ -13,7 +13,7 @@
         :title="card.node.title"
         :poster="card.node.poster"
         :quality="card.node.quality"
-        :route="card.node.route"
+        :slug="card.node.slug"
         />
   		</div>
   	</div>

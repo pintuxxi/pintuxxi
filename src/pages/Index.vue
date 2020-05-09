@@ -3,7 +3,6 @@
     <!-- <PJumbotron /> -->
     <PMoviesMain />
     <PMoviesUpcoming />
-    <PFooter />
   </Layout>
 </template>
 
@@ -11,14 +10,13 @@
 import PJumbotron from "~/components/P-Jumbotron";
 import PMoviesMain from "~/components/movie-list/P-MoviesMain";
 import PMoviesUpcoming from "~/components/movie-list/P-MoviesUpcoming";
-import PFooter from "~/components/P-Footer";
+
 
 export default {
   components: {
     PJumbotron,
     PMoviesMain,
     PMoviesUpcoming,
-    PFooter
   },
   metaInfo: {
     title: 'PintuXXI' + process.env.GRIDSOME_TITLE

@@ -24,7 +24,7 @@ query {
         poster
         bg_image
         quality
-        route
+        slug
       }
     }
   }

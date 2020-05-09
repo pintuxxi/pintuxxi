@@ -4,14 +4,13 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const axios = require('axios')
 
+const axios = require('axios')
 
 async function getMovies() {
 	const { data } = await axios.get("https://yts.mx/api/v2/list_movies.json?quality=3D") 
 	return data.data.movies
 }
-
 
 module.exports = function (api) {
   // api.loadSource(({ addCollection }) => {
@@ -26,10 +25,9 @@ module.exports = function (api) {
 	    const moviesCollection = actions.addCollection("Movies")
 	    const movies = await getMovies()
 
-
 	    for (const movie of movies) {
 	    	let quality = []
-	    	let route = `/movie/${movie.imdb_code}` //.toLowerCase().replace(/ /g, "-")
+	    	let slug = `/movie/watch-${movie.title.replace(/\W+/g, " ")}-free`.toLowerCase().replace(/ /g, "-")
 	    	for (const tor of movie.torrents) {
 	    		quality.push(tor.quality)
 	    	}
@@ -40,7 +38,6 @@ module.exports = function (api) {
 	    		title: movie.title,
 	    		title_english: movie.title_english,
 	    		title_long: movie.title_long,
-	    		slug: movie.slug,
 	    		year: movie.year,
 	    		rating: movie.rating,
 	    		runtime: movie.runtime,
@@ -51,7 +48,7 @@ module.exports = function (api) {
 	    		poster: movie.large_cover_image,
 	    		bg_image: movie.background_image,
 	    		quality: quality,
-	    		route: route
+	    		slug: slug
 	    	})
 	    }
 
@@ -64,25 +61,34 @@ module.exports = function (api) {
 		  allMovies {
 		    edges {
 		      node {
-		      	id
-		      	imdb
-		        title
+				id
+	    		imdb
+	    		title
+	    		title_english
+	    		title_long
+	    		year
+	    		rating
+	    		runtime
+	    		genre
+	    		summary
+	    		desc_full
+	    		yt_trailer
+	    		poster
+	    		bg_image
+	    		quality
+	    		slug
 		      }
 		    }
 		  }
 		}
 	`)
 
-
-
   	data.allMovies.edges.forEach(({ node }) => {
 	    createPage({
-	    	path: `/movie/${node.imdb}`,
+	    	path: node.slug,
 	    	component: "./src/templates/PageWatch.vue",
 	    	context: {
-	    		id: node.id,
-	    		imdb: node.imdb,
-	    		title: node.title
+	    		node: node
 	    	}
 	    })
   	})
